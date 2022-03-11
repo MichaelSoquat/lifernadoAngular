@@ -1,7 +1,7 @@
 <div class="seperate-menu-basket">
     <div>
     <div class="dishes-container" *ngFor="let dish of service.dishes; let i=index">
-        <mat-card class="dishes-box">{{service.dishes[i]}} {{service.prices[i]}} Euro
+        <mat-card class="dishes-box">{{service.dishes[i]['dish']}} {{service.dishes[i]['price']}} Euro
             <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
                 <mat-icon (click) ="addToBasket(i)">add</mat-icon>
             </button>
