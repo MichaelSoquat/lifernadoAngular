@@ -13,13 +13,14 @@ export class ServiceDishes {
         'dish': 'Dönerteller',
         'price': 7,
         'amount': 1
-    },{
+    }, {
         'dish': 'Pommes',
         'price': 2,
         'amount': 1
     }];
-
     dishesInBasket = [];
+
+
 
     constructor() {
 
