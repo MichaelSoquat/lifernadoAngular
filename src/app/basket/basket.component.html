@@ -1,0 +1,9 @@
+<div *ngIf="service.dishesInBasket.length >= 1">
+    <h1>Warenkorb</h1>
+    <mat-card  *ngFor="let dishes of service.dishesInBasket; let i = index"> {{service.dishesInBasket[i]}} 
+        {{service.pricesInBasket[i]}} Euro
+    </mat-card>
+
+</div>
+
+
