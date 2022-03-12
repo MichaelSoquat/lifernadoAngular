@@ -8,13 +8,15 @@ import { ServiceDishes } from '../serviceDishes.class';
 })
 export class BasketComponent implements OnInit {
 
-  constructor(public service: ServiceDishes) { }
-
+  constructor(public service: ServiceDishes) {
+    this.sum();
+  }
+  prices = 0;
   ngOnInit(): void {
   }
   addAmount(i: number) {
     this.service.dishesInBasket[i]['amount']++;
-    console.log( this.service.dishesInBasket[i])
+    this.sum();
   }
 
   removeAmount(i: number) {
@@ -29,6 +31,22 @@ export class BasketComponent implements OnInit {
   deleteAmount(i: number) {
     this.service.dishesInBasket[i]['amount'] = 1;
     this.service.dishesInBasket.splice(i, 1);
-    console.log(this.service.dishesInBasket)
+  }
+
+  sum() {
+
+    if (this.service.dishesInBasket) {
+      setInterval(() => {
+        this.prices = 0;
+        this.service.dishesInBasket.forEach((price) => {
+
+          this.prices += price.price * price.amount;
+          console.log(this.prices)
+          
+        }, 10)
+      })
+      
+    }
+
   }
 }

@@ -20,12 +20,6 @@ export class DishlistComponent implements OnInit {
     if (this.service.dishesInBasket.includes(this.service.dishes[i])) {
       let indexOfThisDish = this.service.dishesInBasket.indexOf(this.service.dishes[i])
       this.service.dishesInBasket[indexOfThisDish]['amount']++;
-
-      console.log(this.service.dishesInBasket.indexOf(this.service.dishes[i]));
-      console.log('dishes in basket', this.service.dishesInBasket)
-      console.log('dishes', this.service.dishes);
-      console.log('The dish is already in basket, please check amount')
-
     } else {
       this.service.dishesInBasket.push(this.service.dishes[i]);
 
